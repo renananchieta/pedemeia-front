@@ -1,9 +1,9 @@
 <template>
-    <v-navigation-drawer v-model="drawer">
+    <v-navigation-drawer v-model="drawer" color="#BDBDBD">
       <v-sheet
         class="pa-4 centralizado"
         position="relative"
-        color=""
+        color="#BDBDBD"
       >
           <v-img src="../../assets/logo-pedemeia.png" />
       </v-sheet>
@@ -18,24 +18,25 @@
         :color="item.color"
         exact 
         >
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-list-item-title class="font-weight-medium">{{ item.title }}</v-list-item-title>
         </v-list-item>
       </v-list>
 
     </v-navigation-drawer>
     <v-app-bar 
       app 
+      color="#546E7A"
       flat 
       density="comfortable">
         <v-app-bar-nav-icon @click="drawer = !drawer" />
 
-        <v-toolbar-title >Pé de meia | Gestão de Estudantes </v-toolbar-title>
-        <v-btn
+        <v-toolbar-title >Pé de meia | Controle de envio de Frequências </v-toolbar-title>
+        <!-- <v-btn
         @click="toggleTheme"
         size="x-large"
         >
         <v-icon>{{ icon }}</v-icon>
-        </v-btn>
+        </v-btn> -->
     </v-app-bar>
 </template>
 
@@ -50,9 +51,10 @@ const drawer = ref(true);
 const icon = ref('mdi-weather-night');
 const items = ref([
     {title: 'Home', to: '/home'},
-    {title: 'Unidades de Ensino', to: '/unidades-ensino'},
-    {title: 'Estudantes', to: '/estudantes'},
-    {title: 'Lançar Frequência', to: '/frequencia'},
+    // {title: 'Unidades de Ensino', to: '/unidades-ensino'},
+    // {title: 'Estudantes', to: '/estudantes'},
+    {title: 'Acompanhar Envio', to: '/frequencia'},
+    {title: 'Enviar Frequência Rand.', to: '/enviar-frequencia'},
 ])
 
 /**
